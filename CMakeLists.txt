@@ -26,11 +26,15 @@ endif()
 
 
 # Include files in the src
-add_executable(TextEditor
+add_executable(${PROJECT_NAME}
         src/main.cpp
-        src/editor.h
-        src/editor.cpp
-        src/config.h
+        src/core/editor.h
+        src/core/editor.cpp
+        src/settings/config.h
+        src/core/EditorControls.cpp
+        src/ui/UIDraw.cpp
+        src/core/textbuffer.cpp
+        src/core/textbuffer.h
 )
 
 # Include eventual directories
