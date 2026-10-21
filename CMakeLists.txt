@@ -33,12 +33,14 @@ add_executable(${PROJECT_NAME}
         src/settings/config.h
         src/core/EditorControls.cpp
         src/ui/UIDraw.cpp
-        src/core/textbuffer.cpp
         src/core/textbuffer.h
+        src/core/textbuffer.cpp
+        src/ui/UIDrawDebug.cpp
 )
 
 # Include eventual directories
 target_include_directories(${PROJECT_NAME} PRIVATE
+        src/external/raygui
         fonts
 )
 

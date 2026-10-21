@@ -1,5 +1,5 @@
 #include "raylib.h"
-#include "core/editor.h"
+#include "core/Editor.h"
 
 //Global Variables
 const int screenWidth=1280;

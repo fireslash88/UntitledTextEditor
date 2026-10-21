@@ -5,8 +5,10 @@
 class EditorConfig {
 public:
 
-    bool DebugMode;
-    bool InsertMode;
+    bool debugLines;
+    bool debugInfo;
+
+    bool insertMode;
 
     int windowPadding;
     int verticalLineSpacing;
@@ -22,19 +24,18 @@ public:
 
     EditorConfig() {
 
-        DebugMode=false;
-        InsertMode=false;
+        debugLines=false;
+        debugInfo=false;
+
+        insertMode=false;
 
         windowPadding=20;
 
         verticalLineSpacing=5;
-
         spacing=0;
-
         fontSize=30;
+        spaceBetweenChar=5;
 
         textColor=BLACK;
-
-        spaceBetweenChar=5;
     }
 };

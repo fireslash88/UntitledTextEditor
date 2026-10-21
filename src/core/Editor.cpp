@@ -1,4 +1,4 @@
-#include "editor.h"
+#include "Editor.h"
 
 void Editor::Initializing() {
     //Loads font at startup
@@ -11,11 +11,13 @@ void Editor::Initializing() {
 void Editor::Update() {
 
     HandleInsertMode();
-    HandleTyping();
-    HandleDebugLines();
 
-    // HandleNewLine();
-    // HandleBackspace();
+    HandleTyping();
+    HandleNewLine();
+    HandleBackspace();
+    HandleTab();
+    HandleDebugMode();
+    HandleCursorMovement();
     // HandleDeleteLine();
 }
 
@@ -24,13 +26,15 @@ void Editor::DrawFrame() {
     BeginDrawing();
     ClearBackground(RAYWHITE);
 
-    DrawTabLimits();
-    DrawDebugLines();
+    // DrawTabLimits();
     DrawSeparatorLine();
-    DrawText();
+    DrawFileText();
     DrawLineNumber();
-    DrawInsertMode();
+    DrawCursor();
+    DrawCursorPosition();
 
+    DrawDebugLines();
+    DrawDebugInfo();
 
     EndDrawing();
 }
