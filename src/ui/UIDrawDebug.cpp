@@ -8,24 +8,24 @@ void Editor::DrawDebugLines() {
     if (config.debugLines) {
         for (int i = 0; i < gridCols; i++) {
             DrawRectangleLines(
-                i * config.gridWidth + config.windowPadding,
-                config.windowPadding,
+                i * config.gridWidth + anchor02.x,
+                anchor02.y,
                 2,
-                GetScreenHeight() - config.windowPadding * 2,
+                GetScreenHeight() - anchor02.y * 2,
                 GRAY);
         }
 
         for (int i = 0; i < gridRows + 1; i++) {
             DrawRectangleLines(
-                config.windowPadding,
-                i * config.verticalLineSpacing + i * config.gridHeight + config.windowPadding,
-                GetScreenWidth() - config.windowPadding * 2,
+                anchor02.x,
+                i * config.verticalLineSpacing + i * config.gridHeight + anchor02.y,
+                GetScreenWidth() - anchor02.x * 2,
                 2,
                 GRAY);
             DrawRectangleLines(
-                config.windowPadding,
-                i * config.verticalLineSpacing + (i + 1) * config.gridHeight + config.windowPadding,
-                GetScreenWidth() - config.windowPadding * 2,
+                anchor02.x,
+                i * config.verticalLineSpacing + (i + 1) * config.gridHeight + anchor02.y,
+                GetScreenWidth() - anchor02.x * 2,
                 2,
                 GRAY);
         }

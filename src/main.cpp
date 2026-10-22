@@ -1,6 +1,9 @@
 #include "raylib.h"
 #include "core/Editor.h"
 
+#define RAYGUI_IMPLEMENTATION
+#include "src/raygui.h"
+
 //Global Variables
 const int screenWidth=1280;
 const int screenHeight=720;

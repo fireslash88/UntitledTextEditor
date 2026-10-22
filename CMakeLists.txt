@@ -32,10 +32,10 @@ add_executable(${PROJECT_NAME}
         src/core/editor.cpp
         src/settings/config.h
         src/core/EditorControls.cpp
-        src/ui/UIDraw.cpp
-        src/core/textbuffer.h
-        src/core/textbuffer.cpp
+        src/core/TextBuffer.h
+        src/core/TextBuffer.cpp
         src/ui/UIDrawDebug.cpp
+        src/ui/UIDraw.cpp
 )
 
 # Include eventual directories

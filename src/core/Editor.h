@@ -39,11 +39,19 @@ private:
 
 
     // Drawing functions
-    // Defined in UIDraw.cpp
-    void DrawTabLimits();
-    void DrawSeparatorLine();
-    void DrawFileText();
+    // Defined in UIDrawNew.cpp
+    Vector2 anchor01 = { 0, 0 };
+    Vector2 anchor02={168,64};
+    void DrawButtons();
+    void DrawMenuLine();
+    void DrawFileTreePanel();
+    void DrawCodePanel();
+    void DrawCursorPositionPanel();
+    // void DrawFileTab();
+
     void DrawLineNumber();
+    void DrawLineSeparator();
+    void DrawFileText();
     void DrawCursor();
     void DrawCursorPosition();
 

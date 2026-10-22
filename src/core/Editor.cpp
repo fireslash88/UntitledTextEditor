@@ -26,13 +26,21 @@ void Editor::DrawFrame() {
     BeginDrawing();
     ClearBackground(RAYWHITE);
 
-    // DrawTabLimits();
-    DrawSeparatorLine();
-    DrawFileText();
+    //Main UI, WIP(?)
+    DrawButtons();
+    DrawMenuLine();
+    DrawFileTreePanel();
+    DrawCodePanel();
+    DrawCursorPositionPanel();
+    // DrawFileTab();
+
     DrawLineNumber();
+    DrawLineSeparator();
+    DrawFileText();
     DrawCursor();
     DrawCursorPosition();
 
+    //UI for debugging
     DrawDebugLines();
     DrawDebugInfo();
 
