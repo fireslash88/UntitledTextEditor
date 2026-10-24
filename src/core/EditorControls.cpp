@@ -1,19 +1,9 @@
-#include <iostream>
-
 #include "Editor.h"
-
-// void Editor::HandleDeleteLine() {
-//     // Delete line TODO: to fix after implementing the text buffer.
-//     if ((IsKeyPressed(KEY_BACKSPACE) | IsKeyPressedRepeat(KEY_BACKSPACE)) && lineCounter > 1) {
-//         lineCounter--;
-//     }
-// }
 
 void Editor::HandleInsertMode() {
     // Activate insert mode
     if (IsKeyPressed(KEY_LEFT_SHIFT)) {
         config.insertMode = !config.insertMode;
-        // std::cout<<("Insert mode activated \n");
     }
 }
 
@@ -72,5 +62,17 @@ void Editor::HandleDebugMode() {
     }
     if (IsKeyPressed(KEY_F2)) {
         config.debugInfo = !config.debugInfo;
+    }
+}
+
+void Editor::HandleLoadingFile() {
+    if (IsKeyPressed(KEY_F3)) {
+        text.LoadFromFile("test.cpp");
+    }
+}
+
+void Editor::HandleSavingFile() {
+    if (IsKeyPressed(KEY_F4)) {
+        text.SaveToFile("test.cpp");
     }
 }

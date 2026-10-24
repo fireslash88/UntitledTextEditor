@@ -30,12 +30,14 @@ private:
 
     void HandleTyping();
     void HandleNewLine();
-    //void HandleDeleteLine();
     void HandleBackspace();
     void HandleTab();
     void HandleCursorMovement();
 
     void HandleDebugMode();
+
+    void HandleLoadingFile();
+    void HandleSavingFile();
 
 
     // Drawing functions

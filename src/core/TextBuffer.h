@@ -13,6 +13,10 @@ public:
         lines.emplace_back();
     }
 
+    void LoadFromFile(const std::string& filePath2);
+    void SaveToFile(const std::string& filepath2);
+    void CloseFile();
+
     // Basic text modification
     void InsertText(char character);
 
@@ -39,6 +43,8 @@ public:
 private:
     // Vector of strings
     std::vector<std::string> lines;
+
+    std::string filePath;
 
     std::size_t cursorLine;
     std::size_t cursorColumn;

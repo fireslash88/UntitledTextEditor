@@ -1,4 +1,55 @@
 #include "textbuffer.h"
+#include "raylib.h"
+
+#include <iostream>
+#include <fstream>
+
+void TextBuffer::LoadFromFile(const std::string& filePath2) {
+    std::ifstream file(filePath2);
+
+    if (!file.is_open()) {
+        TraceLog(LOG_ERROR,"Error while loading the file");
+        return;
+    }
+
+    lines.clear();
+
+    std::string line;
+
+    while (std::getline(file, line)){
+        lines.push_back(line);
+    }
+
+    if (lines.empty()) {
+        lines.emplace_back();
+    }
+
+    cursorColumn=0;
+    cursorLine=0;
+
+    TraceLog(LOG_INFO,"File loaded");
+    file.close();
+}
+
+void TextBuffer::SaveToFile(const std::string &filepath2) {
+    std::ofstream file (filepath2);
+
+    if (!file.is_open()) {
+        TraceLog(LOG_ERROR,"Error while saving file");
+        return;
+    }
+
+    for (std::size_t i=0;i<lines.size();i++) {
+        file<<lines.at(i);
+
+        if (i+1<lines.size()) {
+            file<<'\n';
+        }
+    }
+
+    TraceLog(LOG_INFO,"File saved");
+    file.close();
+}
 
 void TextBuffer::InsertText(char character) {
     lines.at(cursorLine).insert(
@@ -49,7 +100,7 @@ void TextBuffer::InsertTab() {
     lines.at(cursorLine).insert(
         cursorColumn,
         4,
-        '\t'
+        ' '
         );
     cursorColumn+=4;
 }

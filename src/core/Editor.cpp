@@ -18,7 +18,9 @@ void Editor::Update() {
     HandleTab();
     HandleDebugMode();
     HandleCursorMovement();
-    // HandleDeleteLine();
+
+    HandleLoadingFile();
+    HandleSavingFile();
 }
 
 //Draws the frames
@@ -50,4 +52,5 @@ void Editor::DrawFrame() {
 //Unload resources
 void Editor::UnloadResources() {
     UnloadFont(font);
+
 }
